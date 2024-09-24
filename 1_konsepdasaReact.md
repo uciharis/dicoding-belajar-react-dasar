@@ -53,3 +53,13 @@ komponen tsb bersifat reusable
 lihat di :
 > 1_github.js
 > 1_app.js
+
+## Declarative Code
+
+salah satu konsep di React adalah nulis kode secara deklaratif.
+
+Deklaratif adalah memberikan intruksi hasil akhirnya ingin seperti apa tanpa harus menerangkan step step lengkap nya.
+
+seperti halnya mengatur suhu mobil manual (dengan 2 knop, pengatur hembusan dan pendingin)
+vs
+mobil elektrik yang hanya kita input suhu yang diinginkan di mobil
