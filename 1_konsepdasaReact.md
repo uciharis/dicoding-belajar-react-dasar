@@ -69,4 +69,19 @@ function Car({manufacture, type, color}){
 
 nb : React memiliki fitur JSX sehingga kita bisa nulis sintaks HTML pada kode JS.
 
-salah satu keunggulan menggunakan React adalah user interface menjadi reusable. React component sangat berperan untuk mencapai tujuan tersebut. Maka dari itu, kita akn banyak bikin React component.
+salah satu keunggulan menggunakan React adalah user interface menjadi reusable. React component sangat berperan untuk mencapai tujuan tersebut. Maka dari itu, kita akan banyak bikin React component.
+
+## Komposisi
+
+jika biasanya kita memecah kode komplkes jadi fungsi terpisah, kita juga dapat menggabungkan beberapa fungsi untuk menghasilkan data yang lebih kompleks.
+
+`
+function getProfPict(userID){
+    return `https://avatars.githubusercontent.com/u/${userID}`;
+}
+
+function getProfileLink(username){
+    return `https://github.com/${username}`;`
+}
+
+`
