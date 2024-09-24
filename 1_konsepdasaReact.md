@@ -37,16 +37,7 @@ React component adalah sebuah fungsi yang mengembalikan React elemen. dengan Rea
 
 Perhatikan React component berikut :
 
-`
-function Car({manufacture, type, color}){
-    return {
-        manufacture,
-        type,
-        color,
-        unitCode:`${+new Date()}-${manufacture}-${type}-${color}`,
-    }
-}
-`
+> fungsi mengembalikan objek 1_fungsi.js
 
 fungsi diatas bersifat reusable. Hal ini dikarenakan kita bisa membuat objek Car dengan nilai yang berbeda hanya dengan menggunakan fungsi yang sama.
 
