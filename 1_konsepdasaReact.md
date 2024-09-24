@@ -52,20 +52,7 @@ fungsi diatas bersifat reusable. Hal ini dikarenakan kita bisa membuat objek Car
 
 begitu juga React component. Alih-alih mengembalikan data, React component mengembalikan sebuah UI dalam bentuk React elemen.
 
-`
-function Car({manufacture, type, color}){
-    return (
-        <div className='car-info'>
-        <dt>Manufacture:</dt>
-        <dd>{manufacture}</dd>
-        <dt>Type:</dt>
-        <dd>{type}</dd>
-        <dt>Color:</dt>
-        <dd>{color}</dd>
-        </div>
-    );
-}
-`
+> (function car di 1_car.js )
 
 nb : React memiliki fitur JSX sehingga kita bisa nulis sintaks HTML pada kode JS.
 
@@ -75,4 +62,4 @@ salah satu keunggulan menggunakan React adalah user interface menjadi reusable. 
 
 jika biasanya kita memecah kode komplkes jadi fungsi terpisah, kita juga dapat menggabungkan beberapa fungsi untuk menghasilkan data yang lebih kompleks 
 
-> ( kode di file 1_komposisi.js)
+> ( kode di file 1_composition.js)
