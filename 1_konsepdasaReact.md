@@ -44,3 +44,12 @@ salah satu keunggulan menggunakan React adalah user interface menjadi reusable. 
 jika biasanya kita memecah kode komplkes jadi fungsi terpisah, kita juga dapat menggabungkan beberapa fungsi untuk menghasilkan data yang lebih kompleks 
 
 > ( kode di file 1_composition.js)
+
+proses menggabung banyak fungsi utk bikin data yang lebih kompleks dinamakan komposisi.
+
+praktek komposisi di React ditemukan biasanya ketika pembuatan dan penggunaan sebuah komponen.
+
+komponen tsb bersifat reusable
+lihat di :
+> 1_github.js
+> 1_app.js
