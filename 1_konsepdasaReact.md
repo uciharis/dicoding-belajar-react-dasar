@@ -73,15 +73,6 @@ salah satu keunggulan menggunakan React adalah user interface menjadi reusable. 
 
 ## Komposisi
 
-jika biasanya kita memecah kode komplkes jadi fungsi terpisah, kita juga dapat menggabungkan beberapa fungsi untuk menghasilkan data yang lebih kompleks.
+jika biasanya kita memecah kode komplkes jadi fungsi terpisah, kita juga dapat menggabungkan beberapa fungsi untuk menghasilkan data yang lebih kompleks 
 
-`
-function getProfPict(userID){
-    return `https://avatars.githubusercontent.com/u/${userID}`;
-}
-
-function getProfileLink(username){
-    return `https://github.com/${username}`;`
-}
-
-`
+> ( kode di file 1_komposisi.js)
