@@ -65,9 +65,8 @@ begitu juga React component. Alih-alih mengembalikan data, React component menge
 
 `
 
-function Car({manufacture, type, color})
-
-{
+    function Car({manufacture, type, color})
+    {
 
     return (
         <div className='car-info>
@@ -80,9 +79,7 @@ function Car({manufacture, type, color})
         </div>
     );
 
-}
-
-
+    }
 `
 
 
