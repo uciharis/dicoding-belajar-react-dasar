@@ -31,7 +31,9 @@ bila objek dirender pada ReactDOM (DOM) maka akan menghasilkan HTML elemen seper
 
 `
 
-<p class='p-blue'>Content of Paragraph. </p>
+    <p class='p-blue'>
+    Content of Paragraph. 
+    </p>
 
 `
 
