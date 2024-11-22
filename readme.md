@@ -64,11 +64,10 @@ begitu juga React component. Alih-alih mengembalikan data, React component menge
 
 
 `
+      function Car({manufacture, type, color})
+        {
 
-    function Car({manufacture, type, color})
-    {
-
-    return (
+        return (
         <div className='car-info>
             <dt>manufacture : </dt>
             <dd>{manufacture}</dd>
