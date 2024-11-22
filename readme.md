@@ -112,10 +112,48 @@ proses menggabung banyak fungsi utk bikin data yang lebih kompleks dinamakan kom
 
 praktek komposisi di React ditemukan biasanya ketika pembuatan dan penggunaan sebuah komponen.
 
+praktek ini adalah pondasi di dalam react.
+
 komponen tsb bersifat reusable
 lihat di :
-> 1_github.js
-> 1_app.js
+> GithubInfo.js
+```javascript
+
+function ProfilePicture({ userId }) {
+  return (
+    <img
+      src={"https://avatars.githubusercontent.com/u/" + userId}
+      alt="GitHub Profile"
+    />
+  );
+}
+
+function ProfileLink({ username }) {
+  return <a href={"https://github.com/" + username}>{username}</a>;
+}
+
+function GithubInfo({ username, userId }) {
+  return (
+    <div className="github-info">
+      <ProfilePicture userId={userId} />
+      <ProfileLink username={username} />
+    </div>
+  );
+}
+
+export default GithubInfo;
+
+```
+
+> App.js
+```javascript
+
+import GithubInfo from './GithubInfo.js';
+export default function App(){
+    return <GithubInfo username={'dimas'} userId={25724809}/>;
+}
+
+```
 
 ## Declarative Code
 
