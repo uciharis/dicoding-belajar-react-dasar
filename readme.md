@@ -15,7 +15,16 @@ Sama seperti elemen pada standar DOM, elemen di React bisa berupa paragraf, butt
 
 Bedanya, React elemen hanya sebatas objek di javascript biasa. Berikut contoh objek React elemen paragraf.
 
-> kode di 1_objekreact.js
+`
+    {
+     type: 'p',
+     props: {
+       className: 'p-blue',
+       children: 'Content of paragraph.',
+     },
+    }
+    
+`
 
 bila objek dirender pada ReactDOM (DOM) maka akan menghasilkan HTML elemen seperti berikut:
 
