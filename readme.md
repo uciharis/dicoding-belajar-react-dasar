@@ -98,6 +98,14 @@ jika biasanya kita memecah kode komplkes jadi fungsi terpisah, kita juga dapat m
             return `https://github.com/${username}`;
         }
 
+        function getGithubInfo(username,userId){
+            return {
+                profilePict: getProfilePicture(userId),
+                profileLink: getProfileLink(username)
+            };
+        }
+console.log(getGithubInfo('jokontol',25724809));
+
 ```
 
 proses menggabung banyak fungsi utk bikin data yang lebih kompleks dinamakan komposisi.
