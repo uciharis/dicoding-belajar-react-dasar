@@ -15,7 +15,7 @@ Sama seperti elemen pada standar DOM, elemen di React bisa berupa paragraf, butt
 
 Bedanya, React elemen hanya sebatas objek di javascript biasa. Berikut contoh objek React elemen paragraf.
 
-`
+```javascript
 
     {
      type: 'p',
@@ -25,17 +25,17 @@ Bedanya, React elemen hanya sebatas objek di javascript biasa. Berikut contoh ob
      },
     }
 
-`
+```
 
 bila objek dirender pada ReactDOM (DOM) maka akan menghasilkan HTML elemen seperti berikut:
 
-`
+```html
 
     <p class='p-blue'>
     Content of Paragraph. 
     </p>
 
-`
+```
 
 Jika React element seperti HTML elemen, lalu apa itu React component ?
 
@@ -45,10 +45,9 @@ React component hanyalah sebuah fungsi yang return React element.
 
 Perhatikan React component berikut :
 
-`
+```javascript
 
-    function Car({manufacture, type,color})
-    {
+    function Car({manufacture, type,color}){
         return {
             manufacture,
             type,
@@ -57,17 +56,15 @@ Perhatikan React component berikut :
                 }
     }
 
-`
+```
 
 fungsi diatas bersifat reusable. Hal ini dikarenakan kita bisa membuat objek Car dengan nilai yang berbeda hanya dengan menggunakan fungsi yang sama.
 
 begitu juga React component. Alih-alih mengembalikan data, React component mengembalikan sebuah UI dalam bentuk React elemen.
 
 
-`
-      function Car({manufacture, type, color})
-        {
-
+```jsx
+      function Car({manufacture, type, color}){
         return (
         <div className='car-info>
             <dt>manufacture : </dt>
@@ -80,7 +77,7 @@ begitu juga React component. Alih-alih mengembalikan data, React component menge
     );
 
     }
-`
+```
 
 
 nb : React memiliki fitur JSX sehingga kita bisa nulis sintaks HTML pada kode JS.
@@ -91,18 +88,17 @@ salah satu keunggulan menggunakan React adalah user interface menjadi reusable. 
 
 jika biasanya kita memecah kode komplkes jadi fungsi terpisah, kita juga dapat menggabungkan beberapa fungsi untuk menghasilkan data yang lebih kompleks 
 
-`
-    function getProfilePicture(userId)
-    {
-        return `https://avatars.githubusercontent.com/u/${userId}`;
-    }
+```javascript
+       function getProfilePicture(userId){
+            return `https://avatars.githubusercontent.com/u/${userId}`;
+        }
 
-    function getProfileLink(username)
-    {
-        return `https://github.com/${username}`;
-    }
 
-`
+        function getProfileLink(username){
+            return `https://github.com/${username}`;
+        }
+
+```
 
 proses menggabung banyak fungsi utk bikin data yang lebih kompleks dinamakan komposisi.
 
