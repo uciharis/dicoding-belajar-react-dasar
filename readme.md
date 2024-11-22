@@ -161,8 +161,35 @@ salah satu konsep di React adalah nulis kode secara deklaratif.
 
 Deklaratif adalah memberikan intruksi hasil akhirnya ingin seperti apa tanpa harus menerangkan step step lengkap nya.
 
+Berbeda halnya dengan imperative yang menjelaskan secara detil kepada javascript compiler
+
 seperti halnya mengatur suhu mobil manual (dengan 2 knop, pengatur hembusan dan pendingin)
 
 vs
 
 mobil elektrik yang hanya kita input suhu yang diinginkan di mobil
+
+contoh imperative code :
+
+```javascript
+
+const names = ['asep','jokontol', 'cika'];
+const uppernames = [];
+
+for (let i=0;i < names.length; i++){
+    uppernames[i] = names[i].toUpperCase();
+}
+console.log(uppernames);
+
+```
+
+contoh deklaratif :
+
+```javascript
+
+const names = ['asep','jokontol', 'cika'];
+const uppercaseNames = names.map((name=>name.toUpperCase()));
+
+console.log(uppercaseNames);
+
+```
