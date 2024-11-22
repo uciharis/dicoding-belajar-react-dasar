@@ -39,9 +39,22 @@ Jika React element seperti HTML elemen, lalu apa itu React component ?
 
 React component adalah sebuah fungsi yang mengembalikan React elemen. dengan React component, kita dapat mudah membuat antarmuka pengguna yang reusable.
 
+React component hanyalah sebuah fungsi yang return React element.
+
 Perhatikan React component berikut :
 
-> fungsi mengembalikan objek 1_fungsi.js
+`
+
+function Car({manufacture, type,color}){
+    return {
+        manufacture,
+        type,
+        color,
+        unitCode: `${+new Date()}-${manufacture}-${type}-${color}`
+    }
+}
+
+`
 
 fungsi diatas bersifat reusable. Hal ini dikarenakan kita bisa membuat objek Car dengan nilai yang berbeda hanya dengan menggunakan fungsi yang sama.
 
