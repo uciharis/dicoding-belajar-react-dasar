@@ -45,16 +45,15 @@ Perhatikan React component berikut :
 
 `
 
-
-function Car({manufacture, type,color}){
-    return {
-        manufacture,
-        type,
-        color,
-        unitCode: `${+new Date()}-${manufacture}-${type}-${color}`
+    function Car({manufacture, type,color})
+    {
+        return {
+            manufacture,
+            type,
+            color,
+            unitCode: `${+new Date()}-${manufacture}-${type}-${color}`
+                }
     }
-}
-
 
 `
 
@@ -66,7 +65,7 @@ begitu juga React component. Alih-alih mengembalikan data, React component menge
 `
       function Car({manufacture, type, color})
         {
-            
+
         return (
         <div className='car-info>
             <dt>manufacture : </dt>
