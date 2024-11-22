@@ -29,7 +29,11 @@ Bedanya, React elemen hanya sebatas objek di javascript biasa. Berikut contoh ob
 
 bila objek dirender pada ReactDOM (DOM) maka akan menghasilkan HTML elemen seperti berikut:
 
-> elemen di 1_elemen.html
+`
+
+<p class='p-blue'>Content of Paragraph. </p>
+
+`
 
 Jika React element seperti HTML elemen, lalu apa itu React component ?
 
