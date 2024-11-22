@@ -45,6 +45,7 @@ Perhatikan React component berikut :
 
 `
 
+
 function Car({manufacture, type,color}){
     return {
         manufacture,
@@ -53,6 +54,7 @@ function Car({manufacture, type,color}){
         unitCode: `${+new Date()}-${manufacture}-${type}-${color}`
     }
 }
+
 
 `
 
