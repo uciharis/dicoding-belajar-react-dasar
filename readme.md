@@ -60,7 +60,22 @@ fungsi diatas bersifat reusable. Hal ini dikarenakan kita bisa membuat objek Car
 
 begitu juga React component. Alih-alih mengembalikan data, React component mengembalikan sebuah UI dalam bentuk React elemen.
 
-> (function car di 1_car.js )
+`
+
+function Car({manufacture, type, color}){
+    return (
+        <div className='car-info>
+            <dt>manufacture : </dt>
+            <dd>{manufacture}</dd>
+            <dt>type : </dt>
+            <dd>{type}</dd>
+            <dt>color : </dt>
+            <dd>{color}</dd>
+        </div>
+    );
+}
+
+`
 
 nb : React memiliki fitur JSX sehingga kita bisa nulis sintaks HTML pada kode JS.
 
