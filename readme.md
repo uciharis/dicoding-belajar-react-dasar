@@ -193,3 +193,33 @@ const uppercaseNames = names.map((name=>name.toUpperCase()));
 console.log(uppercaseNames);
 
 ```
+
+## React merupakan Deklaratif
+
+React mendorong kita menggunakan gaya deklaratif, dengan memanfaatkan map,filter, atau fungsi array sejenis.
+
+```jsx
+
+function Contacts(){
+  const names = ['asep', 'jokonto7', 'bagas'];
+
+  return (
+    <ol className='contacts>
+      {names.map((name)=><li>{name}</li>)}
+    </ol>
+  );
+}
+
+export default Contacts;
+
+```
+
+contoh lain menetapkan event pada elemen secara deklaratif:
+
+```jsx
+
+<button onClick={callContact}>
+Call Contact
+</button>
+
+```
