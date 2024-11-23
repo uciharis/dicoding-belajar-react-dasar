@@ -223,3 +223,86 @@ Call Contact
 </button>
 
 ```
+
+cara diatas adalah menetapkan event listener di React, tanpa perlu menuliskan addEventListener. hal ini karna sudah di handle oleh React.
+   
+## Unidirectional Data Flow
+
+pada React, data terletak di parent component. Bila child membutuhkan, data akan dikirim oleh parent.
+
+ketika terjadi perubahan data, parent lah yang meng-update. Child hanya bisa mengirim sinyal/event atau callback func ke parent.
+
+parent akan merespons dan memperbarui state. Perubahan state pada parent akan merender ulang child komponen.
+
+Penjelasan lain :
+
+- Props : cara utama mengirim data dari parent ke child. props read-only di child
+- state : data yang berubah ubah dan dideklarasi dengan 'useState' hook
+- callback funct : fungsi yang diberikan parent ke child, yang pakai child utk picu perubahan di parent
+
+## React hanyala Javascript
+
+- tingkat abstraksi di React sangat dangkal. tidak perlu mengingat banyak API baru
+- React tidak buat fungsionalitas baru, sudah ada di JS standar
+
+## Rangkuman Konsep dasar React
+
+### Elemen dan Komponen
+
+- Elemen : blok terkecil dalam bangunan UI react
+- komponen : fungsi yang me-return elemen
+
+### Komposisi
+
+- adalah menggabung banyak fungsi menjadi data yang lebih komplek.
+- selalu diingat bahwa React komponen mengembalikan UI
+
+fungsi Komposisi
+
+```jsx
+
+function getProfilePicture(userId) {
+ return `https://avatars.githubusercontent.com/u/${userId}`;
+}
+ 
+function getProfileLink(username) {
+ return `https://github.com/${username}`;
+}
+ 
+ 
+function getGithubInfo(username, userId) {
+ return {
+   profilePicture: getProfilePicture(userId),
+   profileLink: getProfileLink(username),
+ };
+}
+ 
+console.log(getGithubInfo('dimasmds', 25724809));
+
+```
+
+Komponen komposisi
+
+```jsx
+function ProfilePicture({ userId }) {
+ return (
+   <img src={`https://avatars.githubusercontent.com/u/${userId}`} />
+ );
+}
+ 
+function ProfileLink({ username }) {
+ return (
+   <a href={`https://github.com/${username}`} />
+ )
+}
+ 
+ 
+function GithubInfo({ username, userId }) {
+ return (
+   <div className='github-info'>
+     <ProfilePicture userId={userId} />
+     <ProfileLink username={username} />
+   </div>
+ )
+
+ ```
