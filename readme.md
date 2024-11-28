@@ -216,7 +216,9 @@ export default Contacts;
 
 contoh lain menetapkan event pada elemen secara deklaratif:
 
-```jsx
+
+
+```html
 
 <button onClick={callContact}>Call Contact</button>
 
@@ -242,6 +244,15 @@ Penjelasan lain :
 
 - tingkat abstraksi di React sangat dangkal. tidak perlu mengingat banyak API baru
 - React tidak buat fungsionalitas baru, sudah ada di JS standar
+
+contoh perulangan array contacts ke sebuah list contact :  
+  
+
+```jsx
+<ul>
+  {contacts.map((contact) => (<li>{contact}</li>))}
+</ul>
+```
 
 ## Rangkuman Konsep dasar React
 
@@ -306,4 +317,62 @@ function GithubInfo({ username, userId }) {
  ```
  
 
- # Pengantar React UI komponen
+ # React UI komponen
+
+ ## Pengantar
+
+ Yang akan dibahas adalah :
+
+ - buat react elemen dan component
+ - memahami component properties
+ - komposisi component
+ - membuat aplikasi sederhana
+
+ ### React Element
+
+ antarmuka aplikasi react dibangun menggunakan react element. React element berisi paragraf, heading, atau gambar.
+
+walaupun mirip dengan element dom, tetapi react sebenarnya tidaklah identik. React elemen hanyalah objek js polos dan ringat. cara paling simpel membuat react elemen adalah sbb :
+
+```jsx
+
+React.createElement(
+  // tipe,
+  // properti,
+  // content
+)
+
+```
+misalkan kita ingin membuat element paragraf "Hello React", membuatnya sebagai berikut.
+
+```jsx
+
+const elemen = React.createElement('p',null,'Hello React');
+console.log(elemen);
+
+```
+
+jika dicek, maka output dari elemen hasil createElement hanyalah objek JS biasa. contoh lain misal membuat paragraf dengan id = myP dan className = red yang berisi teks "Helo Bambang"
+
+```jsx
+
+const elements = React.createElement('p',{
+  id: 'myP',
+  className: 'red'
+},
+'Helo Bambang'
+);
+
+```
+Dalam menggunakan React, menjadi suatu praktek yang lazim digunakan untuk menetapkan parameter child secara nested.
+
+```jsx
+
+const heading = React.createElement('h1',null, 'React');
+const strong = React.createElement('strong',null, 'best tools');
+const paragraf = React.createElement('p',null, ['the',strong,'for building UI']);
+const divContainer = React.createElement('div', {className: 'container'},[heading, paragraf]);
+
+export default divContainer ;
+
+```
