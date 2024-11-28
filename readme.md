@@ -218,9 +218,7 @@ contoh lain menetapkan event pada elemen secara deklaratif:
 
 ```jsx
 
-<button onClick={callContact}>
-Call Contact
-</button>
+<button onClick={callContact}>Call Contact</button>
 
 ```
 
