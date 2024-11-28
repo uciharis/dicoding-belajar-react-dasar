@@ -1,0 +1,6 @@
+untuk menggunakan React, perlu memperdalam fungsi deklaratif
+
+yang perlu dipelajari antara lain :
+
+- objek method
+- array method( map, filter,dsb)
