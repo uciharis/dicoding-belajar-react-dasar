@@ -367,7 +367,7 @@ const elements = React.createElement('p',{
 Dalam menggunakan React, menjadi suatu praktek yang lazim digunakan untuk menetapkan parameter child secara nested.
 
 ```jsx
-
+import React from 'react';
 const heading = React.createElement('h1',null, 'React');
 const strong = React.createElement('strong',null, 'best tools');
 const paragraf = React.createElement('p',null, ['the',strong,'for building UI']);
@@ -376,3 +376,7 @@ const divContainer = React.createElement('div', {className: 'container'},[headin
 export default divContainer ;
 
 ```
+
+hasil react elemen diatas :
+
+![Gambar 1](/assets-img/pic001.png)
