@@ -268,7 +268,7 @@ contoh perulangan array contacts ke sebuah list contact :
 
 fungsi Komposisi
 
-```jsx
+```javascript
 
 function getProfilePicture(userId) {
  return `https://avatars.githubusercontent.com/u/${userId}`;
@@ -292,7 +292,7 @@ console.log(getGithubInfo('dimasmds', 25724809));
 
 Komponen komposisi
 
-```jsx
+```javascript
 function ProfilePicture({ userId }) {
  return (
    <img src={`https://avatars.githubusercontent.com/u/${userId}`} />
@@ -334,7 +334,7 @@ function GithubInfo({ username, userId }) {
 
 walaupun mirip dengan element dom, tetapi react sebenarnya tidaklah identik. React elemen hanyalah objek js polos dan ringat. cara paling simpel membuat react elemen adalah sbb :
 
-```jsx
+```javascript
 
 React.createElement(
   // tipe,
@@ -345,7 +345,7 @@ React.createElement(
 ```
 misalkan kita ingin membuat element paragraf "Hello React", membuatnya sebagai berikut.
 
-```jsx
+```javascript
 
 const elemen = React.createElement('p',null,'Hello React');
 console.log(elemen);
@@ -354,7 +354,7 @@ console.log(elemen);
 
 jika dicek, maka output dari elemen hasil createElement hanyalah objek JS biasa. contoh lain misal membuat paragraf dengan id = myP dan className = red yang berisi teks "Helo Bambang"
 
-```jsx
+```javascript
 
 const elements = React.createElement('p',{
   id: 'myP',
@@ -366,7 +366,7 @@ const elements = React.createElement('p',{
 ```
 Dalam menggunakan React, menjadi suatu praktek yang lazim digunakan untuk menetapkan parameter child secara nested.
 
-```jsx
+```javascript
 import React from 'react';
 const heading = React.createElement('h1',null, 'React');
 const strong = React.createElement('strong',null, 'best tools');
@@ -389,7 +389,7 @@ Mari kita mulai dg hal yang sederhana yaitu membuat UI 'biodata perusahaan' sepe
 
 Lakukan dulu import modul react :
 
-```jsx
+```javascript
 import React from 'react';
 
 const header = React.createElement('h1', null,'Biodata Perusahaan');
@@ -405,7 +405,7 @@ untuk tampilkan react element di browser, kita perlu membuat root untuk menampun
 
 untuk membuat root, kita gunakan fungsi createRoot dari module react-dom/client
 
-```jsx
+```javascript
 import React from 'react';
 import {createRoot} from 'react-dom/client';
 const view = document.querySelector('#root');
