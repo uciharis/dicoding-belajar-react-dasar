@@ -32,7 +32,7 @@ bila objek dirender pada ReactDOM (DOM) maka akan menghasilkan HTML elemen seper
 ```html
 
     <p class='p-blue'>
-    Content of Paragraph. 
+    Content of Paragraph.
     </p>
 
 ```
@@ -86,7 +86,7 @@ salah satu keunggulan menggunakan React adalah user interface menjadi reusable. 
 
 ## Komposisi
 
-jika biasanya kita memecah kode komplkes jadi fungsi terpisah, kita juga dapat menggabungkan beberapa fungsi untuk menghasilkan data yang lebih kompleks 
+jika biasanya kita memecah kode komplkes jadi fungsi terpisah, kita juga dapat menggabungkan beberapa fungsi untuk menghasilkan data yang lebih kompleks
 
 ```javascript
        function getProfilePicture(userId){
@@ -225,7 +225,7 @@ contoh lain menetapkan event pada elemen secara deklaratif:
 ```
 
 cara diatas adalah menetapkan event listener di React, tanpa perlu menuliskan addEventListener. hal ini karna sudah di handle oleh React.
-   
+
 ## Unidirectional Data Flow
 
 pada React, data terletak di parent component. Bila child membutuhkan, data akan dikirim oleh parent.
@@ -245,8 +245,8 @@ Penjelasan lain :
 - tingkat abstraksi di React sangat dangkal. tidak perlu mengingat banyak API baru
 - React tidak buat fungsionalitas baru, sudah ada di JS standar
 
-contoh perulangan array contacts ke sebuah list contact :  
-  
+contoh perulangan array contacts ke sebuah list contact :
+
 
 ```jsx
 <ul>
@@ -273,19 +273,19 @@ fungsi Komposisi
 function getProfilePicture(userId) {
  return `https://avatars.githubusercontent.com/u/${userId}`;
 }
- 
+
 function getProfileLink(username) {
  return `https://github.com/${username}`;
 }
- 
- 
+
+
 function getGithubInfo(username, userId) {
  return {
    profilePicture: getProfilePicture(userId),
    profileLink: getProfileLink(username),
  };
 }
- 
+
 console.log(getGithubInfo('dimasmds', 25724809));
 
 ```
@@ -298,14 +298,14 @@ function ProfilePicture({ userId }) {
    <img src={`https://avatars.githubusercontent.com/u/${userId}`} />
  );
 }
- 
+
 function ProfileLink({ username }) {
  return (
    <a href={`https://github.com/${username}`} />
  )
 }
- 
- 
+
+
 function GithubInfo({ username, userId }) {
  return (
    <div className='github-info'>
@@ -315,7 +315,7 @@ function GithubInfo({ username, userId }) {
  )
 
  ```
- 
+
 
  # React UI komponen
 
@@ -380,3 +380,53 @@ export default divContainer ;
 hasil react elemen diatas :
 
 ![Gambar 1](/assets-img/pic001.png)
+
+## Latihan membuat React element
+
+Mari kita mulai dg hal yang sederhana yaitu membuat UI 'biodata perusahaan' seperti contoh berikut :
+
+![Gambar 2](/assets-img/pic002.jpeg)
+
+Lakukan dulu import modul react :
+
+```jsx
+import React from 'react';
+
+const header = React.createElement('h1', null,'Biodata Perusahaan');
+// console.log(header);
+
+```
+
+output console.log(header) menunjukkan bahwa React element hanyalah objek JS biasa.
+
+React elemen sejatinya hanyalah objek JS yang ukurannya kecil, dan dapat diubah menjadi DOM (virtual DOM) di browser.
+
+untuk tampilkan react element di browser, kita perlu membuat root untuk menampung react element yang akan di-render
+
+untuk membuat root, kita gunakan fungsi createRoot dari module react-dom/client
+
+```jsx
+import React from 'react';
+import {createRoot} from 'react-dom/client';
+const view = document.querySelector('#root');
+
+const header = React.createElement('h1', null,'Biodata Perusahaan');
+// console.log(header);
+
+const root = createRoot(view);
+root.render(header);
+```
+
+dengan file html.index :
+
+```html
+<!DOCTYPE html>
+<head>
+  <title> React APP</title>
+</head>
+<body>
+  <div id='root'></div>
+</body>
+</html>
+
+```
