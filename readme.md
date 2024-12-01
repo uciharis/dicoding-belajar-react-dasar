@@ -381,7 +381,7 @@ hasil react elemen diatas :
 
 ![Gambar 1](/assets-img/pic001.png)
 
-## Latihan membuat React element
+### Latihan membuat React element
 
 Mari kita mulai dg hal yang sederhana yaitu membuat UI 'biodata perusahaan' seperti contoh berikut :
 
@@ -455,4 +455,69 @@ const root = createRoot(rootElement);
 root.render(container); // ganti dari header -> container
 
 ```
+### JSX
 
+membuat react element serasa ribet apalagi kalo nested.Maka dari itu React punya solusi yaitu dengan
+penggunaan sintaksis JSX. Berikut contoh penggunaan JSX.
+
+```jsx
+
+const element = <p className = 'string' > Halo React </p>;
+
+```
+
+ kode diatas jika diterjemahkan oleh JSX akan menjadi react element sbb :
+
+ ```javascript
+
+ const element = React.createElement('p', {className : 'string'}, 'Halo React');
+
+ ```
+
+ Ternyata lebih enak menulis react element menggunakan JSX, mirip menulis di html.
+
+ Untuk menulis js expression, kita harus menuliskannya menggunakan kurung kurawal { ... }. Berikut
+ contoh penulisan expression di JSX :
+
+ ```jsx
+
+ const name = 'Dicoding';
+ const element = <p>Helo {name}</p>;
+
+ ```
+
+ Berikut contoh lain kesederhanaan JSX dan kode yang dihasilkan ketika dikonversi ke js biasa.
+
+File JSX
+ ```jsx
+
+ const kontainer = (
+  <div className='kontainer'>
+  <h1><React/h1>
+  <p>The <strong>best tool</strong> for building UI</p>
+  </div>
+ );
+
+export default element;
+ ```
+
+ versi javascript (createElement)
+
+ ```javascript
+
+ const heading = React.createElement('h1', null, 'React');
+ const strong = React.createElement('strong', null, 'best tool');
+ const paragraf = React.createElement('p', null, ['The', strong, 'for Building UI' ]);
+ const kontainer = React.createElement('div', [className: 'container'], [heading, paragraf]);
+
+ ```
+
+ Ketika menulis kode JSX, pastikan hanya mengembalikan 1 element. Meskipun React element bisa berisi nested element,
+ tetapi pastikan hanya ada 1 root elemen yang membungkus seluruh elemen.
+
+ Berikut referensi lebi lengkap tentang JSX :
+
+ [1. referensi JSX-new](https://react.dev/learn/writing-markup-with-jsx 'dokumentasi React terbaru')   
+ [2. referensi JSX-old](https://legacy.reactjs.org/docs/introducing-jsx.html 'dokumentasi React legacy')
+
+ 
