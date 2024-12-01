@@ -408,12 +408,13 @@ untuk membuat root, kita gunakan fungsi createRoot dari module react-dom/client
 ```javascript
 import React from 'react';
 import {createRoot} from 'react-dom/client';
-const view = document.querySelector('#root');
+
+const rootElement = document.querySelector('#root');
 
 const header = React.createElement('h1', null,'Biodata Perusahaan');
 // console.log(header);
 
-const root = createRoot(view);
+const root = createRoot(rootElement);
 root.render(header);
 ```
 
@@ -430,3 +431,28 @@ dengan file html.index :
 </html>
 
 ```
+kita akan coba menambahkan 3 elemen react baru berupa list. kode Reactnya akan menjadi seperti berikut.
+
+```javascript
+
+import React from 'react';
+import {createRoot} from 'react-dom/client';
+
+const rootElement = document.querySelector('#root');
+
+const header = React.createElement('h1',null, 'Biodata Perusahaan');
+
+const item1 = React.createElement('li', null, 'Nama : Dicoding Indonesia');
+const item2 = React.createElement('li', null, 'Tagline : Decode Ideas, Discover Potential');
+const itemParent = React.createElement('ul', null, [item1, item2]);
+
+// kita buat element container utk membungkus itemParent dan header
+// lalu yang dirender adalah containernya, bukan header lagi
+
+const container = React.createElement('div', null, [header, itemParent]);
+const root = createRoot(rootElement);
+
+root.render(container); // ganti dari header -> container
+
+```
+
