@@ -520,4 +520,29 @@ export default element;
  [1. referensi JSX-new](https://react.dev/learn/writing-markup-with-jsx 'dokumentasi React terbaru')   
  [2. referensi JSX-old](https://legacy.reactjs.org/docs/introducing-jsx.html 'dokumentasi React legacy')
 
- 
+ ### Latihan menggunakan JSX
+
+ Kita coba menambahkan juga gambar logo dicoding. Meletakkan gambar atau aset statis
+ yang tidak memerlukan proses, sebaiknya di folder public.
+
+ ```jsx
+
+ import React from 'react';
+ import {createRoot} from 'react-dom/client';
+ const rootElement = document.querySelector('#root');
+
+ const elemen = (
+  <div>
+    <h1>Biodata Perusahaan</h1>
+    <img src='/dicoding-logo.png' alt='gambar logo dicoding' />
+    <ul>
+      <li>Nama      : Dicoding Indonesia</li>
+      <li>Bidang    : Edukasi</li>
+      <li>Tagline   : Decode ideas, discover potentials</li>
+    </ul>
+  </div>
+ );
+
+ rootElement.render(elemen);
+
+ ```
