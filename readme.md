@@ -379,13 +379,13 @@ export default divContainer ;
 
 hasil react elemen diatas :
 
-![Gambar 1](/assets-img/pic001.png)
+![tampilan sederhana](/assets-img/pic001.png)
 
 ### Latihan membuat React element
 
 Mari kita mulai dg hal yang sederhana yaitu membuat UI 'biodata perusahaan' seperti contoh berikut :
 
-![Gambar 2](/assets-img/pic002.jpeg)
+![membuat company profile](/assets-img/pic002.jpeg)
 
 Lakukan dulu import modul react :
 
@@ -575,3 +575,12 @@ root.render(element)
  ```
 
  Berikut implementasi penulisan ( sedikit berbeda karna di codesandbox, kode react diatas dijadikan komponen App.jsx)
+
+Cuplikan Layar kode codesandbox :
+
+![elemen App.jsx](/assets-img/pic003.png)
+
+file gambar 'circle-g.jpg' di folder src. lalu gambar diimpor sbg module dan dipanggil
+di dalam elemen react App.jsx. Berikut previewnya :
+
+![tampilan](/assets-img/pic004.png)
