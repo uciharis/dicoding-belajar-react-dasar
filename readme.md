@@ -546,3 +546,32 @@ export default element;
  rootElement.render(elemen);
 
  ```
+
+ cara lain utk menampilkan gambar adalah dengan meletakkan file gambar di folder src lalu mengimpor
+ gambar menjadi module.
+
+ ```jsx
+
+import React from 'react' ;
+import { createRoot} from 'react-dom/client' ;
+import DicodingImg from './dicoding-logo.png' ;
+const iniRoot = document.querySelector('#root');
+
+const element = (
+  <div>
+    <h1>Biodata Perusahaan</h1>
+    <img src={DicodingImg} />
+    <ul>
+      <li>Nama    : dicoding Indonesia</li>
+      <li>Bidang  : edukasi</li>
+      <li>Tagline : decode Ideas, Discover Potential</li>
+    </ul>
+  </div>
+)
+
+const root = createRoot(iniRoot);
+root.render(element)
+
+ ```
+
+ Berikut implementasi penulisan ( sedikit berbeda karna di codesandbox, kode react diatas dijadikan komponen App.jsx)
