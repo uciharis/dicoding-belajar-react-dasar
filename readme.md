@@ -624,7 +624,7 @@ lalu cara menggunakannya berbeda dengan fungsi JS biasa, yaitu dengan cara :
 
 ```
 
-### Properti Komponent
+## Properti Komponent
 
 React komponen merupakan fungsi JS, maka kita dapat memberikan parameter. 
 Namun, React komponen hanya dapat menerima satu parameter berupa objek, yang biasa disebut props.
@@ -712,4 +712,105 @@ const profile = {
 };
 
 <InstaProfile profile={profile} /> ;
+```
+
+nb : praktek diatas tidak disarankan oleh dicoding, meskipun demikian
+menurut chatgpt, hal tersebut boleh saja. apalagi jika berurusan dengan data yang
+sangat banyak dan kompleks. Sehingga lebih mudah mengirimkan objek. Asalkan
+dilakukan desctructuring agar menjadi struktur yang lebih ringkas.
+
+nb : pada percobaan kode diatas via [codesandbox](https://codesandbox.io/p/sandbox/jsx-praktek-sp4dn8),
+objek perlu diinisiasi di index.js atau di tempat rendernya.
+
+index.js
+```javascript
+
+profile = {
+   name: "samsul",
+  warna: "pink",
+  umur: 99,
+  isVerif: true
+}
+
+```
+
+Begini praktek yang disarankan dicoding utk mengirimkan props satu per satu
+
+```jsx
+
+    function InstagramProfile(props) {
+      const name = props.name;
+      const username = props.username;
+      const bio = props.bio;
+      const isVerified = props.isVerified;
+     
+      return (
+        <div className="container">
+          <dl>
+            <dt>Name: </dt>
+            <dd>{name}</dd>
+            <dt>Username: </dt>
+            <dd>{username}</dd>
+            <dt>Bio: </dt>
+            <dd>{bio}</dd>
+            <dt>Verified: </dt>
+            <dd>{isVerified ? 'yes' : 'no'}</dd>
+          </dl>
+        </div>
+      );
+    }
+     
+    <InstagramProfile
+      name="Dicoding Indonesia"
+      username="dicoding"
+      bio="Bangun Karirmu Sebagai Developer Profesional"
+      isVerified // pemberian nilai boolean "true" cukup dengan menuliskan nama properti 
+
+```
+
+cara seperti diatas, punya 1 pertimbangan. pertimbangan tersebut
+adalah kita menghindari mengirimkan data yang sebenarnya tidak perlu.
+
+Best practice lainnya adalah menggunakan fitur ES6 objek desctructuring
+seperti berikut:
+
+```jsx
+
+    function InstagramProfile({ name, username, bio, isVerified }) {
+      return (
+        <div className="container">
+          <dl>
+            <dt>Name: </dt>
+            <dd>{name}</dd>
+            <dt>Username: </dt>
+            <dd>{username}</dd>
+            <dt>Bio: </dt>
+            <dd>{bio}</dd>
+            <dt>Verified: </dt>
+            <dd>{isVerified ? 'yes' : 'no'}</dd>
+          </dl>
+        </div>
+      );
+    }
+
+```
+
+### children
+
+React komponen punya 1 properti spesial bernama children.
+Properti ini spesial karna memberikan nilainya beda dengan properti biasa.
+
+Nilai properti children didtetapkan diantara tag pembuka dan penutup komponen.
+contohnya seperti berikut: 
+
+```jsx
+
+function SayName(name){
+  return <p>hello {name}</p>
+}
+
+// carra memanggil children
+
+<SayName>mulyontod</SayName> ;
+
 ```
