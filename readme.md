@@ -599,6 +599,8 @@ pada bagian terkecil tanpa mengganggu keseluruhan kode yang ada.
 Cara paling sederhana untuk membuat React component adalah menulis fungsi
 dengan mengembalikan React component.
 
+nb : React komponen adalah sebuah fungsi JS yang mengembalikan UI (react element)
+
 ```jsx
 
 function SayHello(){
@@ -644,11 +646,70 @@ function SayHello(props){
 
 ```
 
-berikut penggunaan dari kode diatas.
+Ingat, meskipun react komponent adalah fungsi JS, tetapi memanggilnya tidak
+seperti kita memanggil fungsi pada umumnya. hal ini dikarenakan React secara otomatis
+mengenali jika kita memanggil komponen : 
+
+```html
+
+'<Blabla />'
+
+```
+
+daripada
+memanggil seperti :
+
+```javascript
+Blabla(); // cara yang salah memanggil komponen
+```
+
+berikut penggunaan/ memanggil React komponen kode diatas.
 
 ```jsx
 
 <SayHello name='bil' company='mikocok' />
 <SayHello name='mark' company='fesbuk' />
 
+```
+
+Best practice saat mengirim props di React komponen adalah dengan tidak mengirimkan JS objek.
+Jika tidak bisa dihindari, maka sebaiknya di-destructure di dalam komponen sebelum digunakan
+ke dalam return nya.
+
+Berikut contoh mengirimkan objek sebagai props :
+
+```jsx
+
+function InstaProfile(props){
+  const profile = props.profile;
+
+  const name = profile.name;
+  const username = profile.name;
+  const bio = profile.bio;
+  const isVerified = profile.isVerified;
+
+  return (
+    <>
+      <dl>
+        <dt>Name: </dt>
+        <dd>{name}</dd>
+        <dt>username: </dt>
+        <dd>{username}</dd>
+        <dt>Bio: </dt>
+        <dd>{bio}</dd>
+        <dt>Verified: </dt>
+        <dd>{isVerified}</dd>
+      </dl>
+    </>
+  );
+}
+
+const profile = {
+  name: 'Dicoding Indonesia',
+  username: 'dicoding',
+  bio: 'bangun karirmu sbg developer profesional',
+  isVerified: true
+};
+
+<InstaProfile profile={profile} /> ;
 ```
