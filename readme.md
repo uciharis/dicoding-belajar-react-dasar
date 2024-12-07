@@ -584,3 +584,71 @@ file gambar 'circle-g.jpg' di folder src. lalu gambar diimpor sbg module dan dip
 di dalam elemen react App.jsx. Berikut previewnya :
 
 ![tampilan](/assets-img/pic004.png)
+
+> "components let you split the ui into independent, reusable pieces, and think about each piece in isolation"
+> - React Team
+
+
+Konsep komponen sangat baik karena memecah UI ke bagian bagian kecil.
+Bagian tersebut punya tanggung jawab yang jelas
+dan properti yang sudah didefinisikan.
+
+hal ini sangat penting ketika membangun aplikasi karena kita dapat fokus
+pada bagian terkecil tanpa mengganggu keseluruhan kode yang ada.
+
+Cara paling sederhana untuk membuat React component adalah menulis fungsi
+dengan mengembalikan React component.
+
+```jsx
+
+function SayHello(){
+  // blablabla
+
+  return <p> Helo world</p>
+}
+
+// catatan : penulisan React component selalu diawali dg huruf Kapital
+// hal ini utk membedakan built-in HTML element dan component React
+
+```
+berikut penjelasan tentang penulisan komponen React :    
+[naming_ReactComponent_rules](https://react.dev/learn/your-first-component#what-the-browser-sees)
+
+lalu cara menggunakannya berbeda dengan fungsi JS biasa, yaitu dengan cara :
+
+```jsx
+
+<SayHello />
+
+```
+
+### Properti Komponent
+
+React komponen merupakan fungsi JS, maka kita dapat memberikan parameter. 
+Namun, React komponen hanya dapat menerima satu parameter berupa objek, yang biasa disebut props.
+
+Contoh :
+
+```jsx
+
+function SayHello(props){
+  const name = props.name;
+  const company = props.company;
+
+  return (
+    <p>
+      Hello, {name} from {company} .
+    </p>
+  );
+}
+
+```
+
+berikut penggunaan dari kode diatas.
+
+```jsx
+
+<SayHello name='bil' company='mikocok' />
+<SayHello name='mark' company='fesbuk' />
+
+```
