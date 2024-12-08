@@ -851,3 +851,7 @@ dan kelihatan langsung apa yang digunakan komponen.
 
 Selain itu, memang props spesial itu menggunakan keyword children. Itu adalah
 konvensi yang berlaku di React Component. Props juga. meskipun nanti akan di-destruct ke objek yang lebih kecil.
+
+contoh kode nya ada link berikut : [stackblitz](https://stackblitz.com/edit/vitejs-vite-rdzhexxp?file=src%2Fmain.jsx)
+
+![tampilan kode](/assets-img/pic005.png)
