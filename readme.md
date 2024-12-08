@@ -803,14 +803,48 @@ Properti ini spesial karna memberikan nilainya beda dengan properti biasa.
 Nilai properti children didtetapkan diantara tag pembuka dan penutup komponen.
 contohnya seperti berikut: 
 
+SayName.jsx
 ```jsx
 
-function SayName(name){
-  return <p>hello {name}</p>
+function SayName({children}){
+  return (
+    <p>hello {children}</p>
+  )
 }
+```
+index.js
 
-// carra memanggil children
-
-<SayName>mulyontod</SayName> ;
+```jsx
+// cara memanggil children
+<SayName> mulyono </SayName> ;
 
 ```
+
+contoh lain misal :
+
+SayName.jsx
+```jsx
+function SayName({name, children}){
+  return (
+    <>
+    <h1>Perusahaan{name}</h1>
+    {children}
+    </>
+  )
+}
+```
+
+Sedangkan cara memanggil dan menggunakannya :
+
+index.js
+```javascript
+createRoot(document.querySelector('#root')).render(
+  <SayName name='Mulyo no'>
+    <p>Owner ni bos</p>
+    <h2>senggol donk</h2>  
+  </SayName>
+)
+
+```
+nb : untuk {name, children} adalah teknik destructuring. lebih enak dilihat
+dan kelihatan langsung apa yang digunakan komponen.
