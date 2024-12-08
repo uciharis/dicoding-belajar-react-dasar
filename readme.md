@@ -848,3 +848,6 @@ createRoot(document.querySelector('#root')).render(
 ```
 nb : untuk {name, children} adalah teknik destructuring. lebih enak dilihat
 dan kelihatan langsung apa yang digunakan komponen.
+
+Selain itu, memang props spesial itu menggunakan keyword children. Itu adalah
+konvensi yang berlaku di React Component. Props juga. meskipun nanti akan di-destruct ke objek yang lebih kecil.
