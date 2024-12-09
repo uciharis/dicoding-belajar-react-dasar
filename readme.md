@@ -945,3 +945,10 @@ function CardContainer(){
 }
 
 ```
+Berikut hirarki dari komponen diatas :
+
+CardContainer  
+  - SearchBar   
+  - ProductContainer   
+    - ProductCategoryRow   
+    - ProductRow   
