@@ -951,4 +951,26 @@ CardContainer
   - SearchBar   
   - ProductContainer   
     - ProductCategoryRow   
-    - ProductRow   
+    - ProductRowP
+
+Saatnya berlatih membuat halaman news dengan komponen.
+
+Berikut tampilan yang akan dibuat dengan rincian sebagai berikut :
+
+![latihan komponen](/assets-img/pic007.png)
+
+1. NewsContainer
+2. Header
+3. Card
+4. CardHeader
+5. CardBody
+6. Button
+
+dengan struktur/hirarki komponen adalah :
+
+NewsContainer
+ - Header
+ - Card
+     - CardHeader
+     - CardBody
+         - Button
