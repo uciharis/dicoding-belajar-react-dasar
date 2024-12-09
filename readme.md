@@ -862,4 +862,86 @@ Komponen di React dapat menampung dan menghasilkan UI yang kompleks.
 Biasanya Komponen kompleks dibangun dari beberapa komponen yang kecil.
 Konsep ini dinamakan Composition.
 
+
+Kita harus selalu menekankan prinsip single-responsibility. Prinsip tersebut menyatakan
+bahwa tiap fungsi harus memiliki 1 tanggung jawab saja. Demikian halnya
+dengan komponen yang komplek, dapat diterjemahkan ke beberapa komponen yang lebih kecil.
+
+Berikut ini adalah UI dari card tabel produk.
+
 ![Komposisi](/assets-img/pic006.png)
+
+Jika kita pecah komponen card diatas, didapatkan beberapa komponen sebagai berikut :
+
+1. CardContainer
+2. SearchBar
+3. ProductContainer
+4. ProductCategoryRow
+5. ProductRow
+
+Setelah mengidentifikasi pemecahan komponen, kodenya menjadi sebagai berikut :
+
+```jsx
+
+function SearchBar(){
+  return (
+    <div className = 'search-bar__container' >
+      <input type='text' placeholder='search ... ' />
+      <div className='search-bar__in_stock_checkbox'>
+        <input type='checkbox' />
+        <label>only show product in stock</label>
+      </div>
+    </div>
+  );
+}
+
+function ProductCategoryRow({name}){
+  return (
+    <tr>
+      <td colSpan='2' >
+      <strong>{name}</strong>
+      </td>
+    </tr>
+  );
+}
+
+function ProductRow({name,price}){
+  return (
+    <tr>
+    <td>{name}</td>
+    <td>{price}</td>
+    </tr>
+  );
+}
+
+function ProductContainer(){
+  return (
+    <div className='product-container>
+      <table>
+        <tr>
+          <th>Name</th>
+          <th>Price</th>
+        </tr>
+        <ProductCategoryRow name='sporting goods' />
+        <ProductRow name='Football' price='$49' />
+        <ProductRow name='Baseball' price='$9' />
+        <ProductRow name='basketball' price='$40' />
+        <ProductCategoryRow name='electronics' />
+        <ProductRow name='iPod touch' price='$100' />
+        <ProductRow name='iPhone 5x' price='$239' />
+        <ProductRow name='Nexus 9' price='$140' />
+      </table>
+    </div>
+  );
+}
+
+function CardContainer(){
+  return (
+    <div className ='container'>
+    <SearchBar />
+    <ProductContainer />
+    </div>
+  )
+}
+
+```
