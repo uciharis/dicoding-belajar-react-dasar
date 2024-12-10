@@ -1122,3 +1122,71 @@ createRoot(document.getElementById('root')).render(
 )
 
 ```
+
+Pada latihan selanjutnya, kita akan menampilkan UI dalam bentuk list.
+Tujuan utama adalah mengubah penggunaan componen card yang dilakukan
+secara manual dan repetitif agar menjadi lebih efektif.
+
+Dengan menggunakan React, kita dpat menampilkan list memanfaatkan fungsi
+Array map sebagai berikut :
+
+```jsx
+<ul id='news>
+  { someNews.map((news)=> <li>{news.title}</li>)}
+</ul>
+```
+
+Dengan cara yang sama, kita akan merubah beberapa kode di Card menjadi seperti berikut :
+
+```jsx
+
+    function News() {
+      // data news
+      const someNews = [
+        {
+          title: 'CNN Acuire BEME',
+          date: 'March 20 2022',
+          content: "CNN purchased Casey Neistat's Beme app for $25million.",
+          image: 'https://source.unsplash.com/user/erondu/600x400',
+          category: 'News',
+          link: '#'
+        },
+        {
+          title: 'React and the WP-API',
+          date: 'March 19 2022',
+          content: 'The first ever decoupled starter theme for React & the WP-API.',
+          image: 'https://source.unsplash.com/user/ilyapavlov/600x400',
+          category: 'News',
+          link: '#'
+        },
+        {
+          title: 'Nomad Lifestyle',
+          date: 'March 19 2022',
+          content: 'Learn our tips and tricks on living a nomadic lifestyle.',
+          image: 'https://source.unsplash.com/user/erondu/600x400',
+          category: 'Travel',
+          link: '#'
+        }
+      ];
+     
+     
+      return (
+        <div>
+          <Header title="Latest News" subtitle="Covering March & April 2022" />
+          {someNews.map((news) => (
+            <Card {...news} key={news.title} />
+          ))}
+        </div>
+      );
+    }
+
+```
+
+dengan menggunakan map, kita dapat mencetak sebanyak item dari Array.
+
+nb : ketika merender komponen sebagai list, perlu menambahkan key karna masing-masing komponen adalah unik.
+maka menambahkan key diperlukan karena cara kerja React adalah hanya render ulang komponen yang berubah saja. dengan memberi key maka itu React dapat lebih mudah membaca perubahan hal tersebut.
+
+### Studi Kasus
+
+Kita akan membuat aplikasi Daftar Kontak. Cara kerjanya sederhana, untuk menampilkan, menghapus dan menambah kontak baru.
