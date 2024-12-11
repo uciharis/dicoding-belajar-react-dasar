@@ -1190,3 +1190,74 @@ maka menambahkan key diperlukan karena cara kerja React adalah hanya render ulan
 ### Studi Kasus
 
 Kita akan membuat aplikasi Daftar Kontak. Cara kerjanya sederhana, untuk menampilkan, menghapus dan menambah kontak baru.
+
+Sebelumnya kita menjalankan kode React di codesandbox atau stackblitz karena mudah tanpa deploy dan seting ina itu. Tapi kali ini kita akan menulis kode React secara lokal menggunakan bantuan Vite.
+
+Berikut langkah-langkah menyiapkan kelengkapan projek React :
+
+1. Pastikan sudah terinstall nodejs di sistem. Selanjutnya cek versi node dan npm.
+> node --version   
+> npm --version
+
+2. selanjutnya, masuk ke dalam folder projek. Saya membuat folder bernama "react-projek".
+
+3. selanjutnya arahkan terminal ke dalam folder tersebut. Lalu jalankan command berikut.
+
+> npm create vite
+
+selanjutnya node package manager akan menginstal template React yang disediakan oleh vite.
+
+4. vite akan memandu via terminal, mulai dari nama projek, library/ framework yang ingin dipakai ( React) dan bahasa yang digunakan. Kita pilih javascript biasa. Saya menamai projeknya adalah "konak-app"
+
+5. node menjalankan pembuatan template tersebut dengan mengunduh file-file dan folder di dalam folder bernama konak-app.
+
+6. Seluruh struktur file dan folder telah terunduh. Selanjutnya kita akan menginstal package yang tertulis di file package.json dengan cara :
+> npm install
+
+7. node mengunduh semua module yang dibutuhkan untuk pembangunan aplikasi React. Selanjutnya, jalankan template tersebut dengan :
+> npm run dev
+
+Jika berhasil, maka akan muncul link localhost di terminal.
+
+Langkah selanjutnya, kita akan hapus file yang ada di 'src' sebelum memulai menulis kode kita.
+
+Sebelum memulai menulis kode, berikut adalah hasil breakdown dari komponen penyusun Konak App.
+
+![sketch aplikasi](/assets-img/pic008.png)
+
+Penjelasan
+
+1. KonakApp(merah) : kontainer dari komponen nomor 2
+2. KonakList(kuning) : kontainer dari nomor 3
+3. KonakItem : kontainer berisi foto dan data kontak
+4. ItemImg : foto kontak
+5. ItemBody : data kontak berisi nama dan profil sosmed
+
+Sebelumnya, mari kita sediakan data dulu di file data.js
+
+data.js
+```javascript
+
+export const getData = () => {
+    return [
+        {
+            id: 1,
+            name: 'dima sapitra',
+            tag: 'dimasaputra',
+            imageUrl: '/images/dimasmds.jpeg'
+        },
+        {
+            id: 2,
+            name: 'ari faizin',
+            tag: 'arifaizin',
+            imageUrl: '/images/arifaizin.jpeg'
+        },
+        {
+            id: 3,
+            name: 'rahm farji',
+            tag: 'rfarj69',
+            imageUrl: '/images/rfajri27.jpeg'
+        }
+    ];
+}
+```
