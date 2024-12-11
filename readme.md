@@ -1261,3 +1261,25 @@ export const getData = () => {
     ];
 }
 ```
+
+Kita mulai dengan menulis komponen yang paling kecil, yaitu KonakItem, kontainer yang berisi ItemBody dan ItemImg.
+
+KonakItem.jsx
+```jsx
+    import React from 'react';
+     
+    function ContactItemBody({ name, tag }) {
+     return (
+       <div className="contact-item__body">
+         <h3 className="contact-item__title">{name}</h3>
+         <p className="contact-item__username">@{tag}</p>
+       </div>
+     );
+    }
+     
+    export default ContactItemBody;
+
+```
+Perhatikan className diatas. Penamaan class tersebut nanti digunakan untuk styling. Cara penamaan class diatas mengikuti format BEM. Penjelasan lebih lengkap melalui link dibawah ini.
+
+[naming convention-BEM](https://getbem.com/introduction/)
