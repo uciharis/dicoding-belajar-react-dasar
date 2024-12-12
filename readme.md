@@ -1223,7 +1223,7 @@ Langkah selanjutnya, kita akan hapus file yang ada di 'src' sebelum memulai menu
 
 Sebelum memulai menulis kode, berikut adalah hasil breakdown dari komponen penyusun Konak App.
 
-![sketch aplikasi](/assets-img/pic008.png)
+![sketch aplikasi](/assets-img/pic009.png)
 
 Penjelasan
 
