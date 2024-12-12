@@ -1266,20 +1266,71 @@ Kita mulai dengan menulis komponen yang paling kecil, yaitu KonakItem, kontainer
 
 KonakItem.jsx
 ```jsx
-    import React from 'react';
-     
-    function ContactItemBody({ name, tag }) {
-     return (
-       <div className="contact-item__body">
-         <h3 className="contact-item__title">{name}</h3>
-         <p className="contact-item__username">@{tag}</p>
-       </div>
-     );
-    }
-     
-    export default ContactItemBody;
+import React from "react";
+import ItemBody from "./ItemBody";
+import ItemImg from "./ItemImg";
+
+export default function KonakItem({imageUrl, name,tag}){
+    return (
+        <div className="contact-item">
+            <ItemImg imageUrl={imageUrl} />
+            <ItemBody name={name} tag={tag} />
+        </div>
+    );
+}
 
 ```
+
+KonakItem adalah komponen yang berisi poto profil, nama user dan tag user.
+Komponen poto profil adalah ItemImg.jsx dan
+keterangan user berisi nama dan tag user adalah komponen ItemBody.
+Berikut cara membuatnya :
+
+ItemImg.jsx
+```jsx
+
+export default function ItemImg({imageUrl}){
+  return (
+    <div>
+      <img src={imageUrl} alt='avatar' />
+    </div>
+  )
+}
+```
+
+dan komponen ItemBody.jsx
+```jsx
+
+export default function({name, tag}){
+  return (
+    <div>
+    <h1>{name}</h1>
+    <p>@{tag}</p>
+    </div>
+  )
+}
+
+```
+Selanjutnya adalah komponen KonakList.jsx yang mengembalikan sejumlah KonakItem.jsx
+
+KonakList.jsx
+```jsx
+
+export default function KonakList({kontaks}){
+  return (
+    <div>
+    {kontaks.map((kontak) => (
+      <KonakItem key={kontak.id} {...kontak} />
+      ))}
+    </div>
+  )
+}
+
+```
+
+
+
 Perhatikan className diatas. Penamaan class tersebut nanti digunakan untuk styling. Cara penamaan class diatas mengikuti format BEM. Penjelasan lebih lengkap melalui link dibawah ini.
 
 [naming convention-BEM](https://getbem.com/introduction/)
+
