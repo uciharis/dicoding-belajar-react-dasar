@@ -1363,6 +1363,33 @@ createRoot(document.getElementById('root)).render(<KonakApp />)
 Sedangkan data yang akan dirender oleh komponen-komponen aplikasi Konak diletakkan
 KonakApp.jsx dengan data berupa objek di data.js. Berikut kode datanya.
 
+data.js
+```javascript
+
+export const getData = () => {
+    return [
+        {
+            id: 1,
+            name: 'dima sapitra',
+            tag: 'dimasaputra',
+            imageUrl: 'public/images/dimasmds.jpeg'
+        },
+        {
+            id: 2,
+            name: 'ari faizin',
+            tag: 'arifaizin',
+            imageUrl: 'public/images/arifaizin.jpeg'
+        },
+        {
+            id: 3,
+            name: 'rahm farji',
+            tag: 'rfarj69',
+            imageUrl: 'public/images/rfajri27.jpeg'
+        }
+    ];
+}
+
+```
 
 
 Perhatikan className diatas. Penamaan class tersebut nanti digunakan untuk styling. Cara penamaan class diatas mengikuti format BEM. Penjelasan lebih lengkap melalui link dibawah ini.
