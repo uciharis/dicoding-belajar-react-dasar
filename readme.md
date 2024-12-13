@@ -1361,38 +1361,45 @@ createRoot(document.getElementById('root)).render(<KonakApp />)
 
 ```
 Sedangkan data yang akan dirender oleh komponen-komponen aplikasi Konak diletakkan
-KonakApp.jsx dengan data berupa objek di data.js. Berikut kode datanya.
+KonakApp.jsx dengan data berupa objek di data.js.
 
-data.js
-```javascript
+nb: komponen-komponen diatas berada di folder src (termasuk data.js dan index.jsx)
 
-export const getData = () => {
-    return [
-        {
-            id: 1,
-            name: 'dima sapitra',
-            tag: 'dimasaputra',
-            imageUrl: 'public/images/dimasmds.jpeg'
-        },
-        {
-            id: 2,
-            name: 'ari faizin',
-            tag: 'arifaizin',
-            imageUrl: 'public/images/arifaizin.jpeg'
-        },
-        {
-            id: 3,
-            name: 'rahm farji',
-            tag: 'rfarj69',
-            imageUrl: 'public/images/rfajri27.jpeg'
-        }
-    ];
-}
-
-```
-
-
-Perhatikan className diatas. Penamaan class tersebut nanti digunakan untuk styling. Cara penamaan class diatas mengikuti format BEM. Penjelasan lebih lengkap melalui link dibawah ini.
+untuk melakukan styling, kita perlu memberikan className pada elemen Parent di masing-masing
+komponennya. Perhatikan cara memberikan nama di className. Cara penamaan class 
+diatas mengikuti format BEM. Penjelasan lebih lengkap melalui link dibawah ini.
 
 [naming convention-BEM](https://getbem.com/introduction/)
 
+Sekarang kita akan mengatur beberapa file diatas agar lebih rapi dengan
+membuat beberapa folder di dalam src berdasarkan jenisnya, yaitu:
+- folder components (semua komponen, kecuali index.jsx)
+- folder styles (index.css)
+- folder utils (data.js)
+
+Jika sebelumnya file styling index.css diimpor ke dalam file html,
+kita akan perlakukan sebagai module dan mengimpornya ke index.jsx
+
+Berikut tangkapan layar dari struktur folder yang telah disesuaikan.
+
+![struktur folder perbaikan](/assets-img/pic010.png)
+
+## Rangkuman
+
+1. Seluruh interface aplikasi React dibangun menggunakan React element.
+
+2. Nilai dari sebuah React element hanyalah objek javascript.
+
+3. JSX memudahkan kita untuk menulis React elemen jauh lebih mudah
+daripada menggunakan fungsi createElement().
+
+4. JSX hanya mengembalikan 1 root elemen. Selalu pastikan seluruh
+element yang kita buat dibungkus 1 root elemen.
+
+5. React komponen adalah fungsi javascript yang mengembalikan React element
+
+6. konvensi penamaan React komponen selalu diawali kapital. Untuk
+lengkapnya silahkan baca di sini : [convension](https://react.dev/learn/your-first-component#what-the-browser-sees)
+
+7. Komponen properties adalah parameter di dalam react komponen.
+hanya menerima 1 parameter berupa objek yang disebut sbg props.
