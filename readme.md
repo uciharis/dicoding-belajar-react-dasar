@@ -1327,7 +1327,23 @@ export default function KonakList({kontaks}){
 }
 
 ```
+Selanjutkan komponen KonakApp.jsx akan memanggil komponen KonakList.jsx seperti berikut :
 
+KonakApp.jsx
+``jsx
+
+export default function KonakApp(){
+  const kontaks = getData();
+
+  return (
+    <div>
+    <h1>Daftar Kontak</h1>
+    <KonakList kontaks={kontaks} />
+    </div>
+  );
+}
+
+```
 
 
 Perhatikan className diatas. Penamaan class tersebut nanti digunakan untuk styling. Cara penamaan class diatas mengikuti format BEM. Penjelasan lebih lengkap melalui link dibawah ini.
