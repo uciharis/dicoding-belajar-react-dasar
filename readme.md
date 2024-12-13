@@ -1330,7 +1330,10 @@ export default function KonakList({kontaks}){
 Selanjutkan komponen KonakApp.jsx akan memanggil komponen KonakList.jsx seperti berikut :
 
 KonakApp.jsx
-``jsx
+```jsx
+
+import KonakList from "./KonakList" ;
+import {getData} from "./data" ;
 
 export default function KonakApp(){
   const kontaks = getData();
@@ -1344,6 +1347,22 @@ export default function KonakApp(){
 }
 
 ```
+Yang terakhir, KonakApp.jsx akan diload di index.js ke root html
+seperti dibawah ini.
+
+index.jsx
+```jsx
+
+import {createRoot} from "react-dom/client" ;
+import "./index.css" ;
+import KonakApp from "./KonakApp" ;
+
+createRoot(document.getElementById('root)).render(<KonakApp />)
+
+```
+Sedangkan data yang akan dirender oleh komponen-komponen aplikasi Konak diletakkan
+KonakApp.jsx dengan data berupa objek di data.js. Berikut kode datanya.
+
 
 
 Perhatikan className diatas. Penamaan class tersebut nanti digunakan untuk styling. Cara penamaan class diatas mengikuti format BEM. Penjelasan lebih lengkap melalui link dibawah ini.
